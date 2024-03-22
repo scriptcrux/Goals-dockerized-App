@@ -1,4 +1,4 @@
-# Containerzation of App
+# Containerization of App
 
 this app is based on react, nodejs and mongoDB
 
