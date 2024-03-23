@@ -66,10 +66,10 @@ docker build -t goals-node .
 ## Run Node API Container
 
 docker run --name goals-backend \
- -e MONGODB_USERNAME=max \
+ -e MONGODB_USERNAME=root \
  -e MONGODB_PASSWORD=secret \
  -v logs:/app/logs \
- -v /Users/maximilianschwarzmuller/development/teaching/udemy/docker-complete/backend:/app \
+ -v /<folder-path>/backend:/app \
  -v /app/node_modules \
  --rm \
  -d \
@@ -88,7 +88,7 @@ docker build -t goals-react .
 ## Run React SPA Container
 
 docker run --name goals-frontend \
- -v /Users/maximilianschwarzmuller/development/teaching/udemy/docker-complete/frontend/src:/app/src \
+ -v /<folder-path>frontend/src:/app/src \
  --rm \
  -d \
  -p 3000:3000 \
