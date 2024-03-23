@@ -47,7 +47,7 @@ docker network create goals-net
 ## Run MongoDB Container
 
 docker run --name mongodb \
- -e MONGO_INITDB_ROOT_USERNAME=max \
+ -e MONGO_INITDB_ROOT_USERNAME=root \
  -e MONGO_INITDB_ROOT_PASSWORD=secret \
  -v data:/data/db \
  --rm \
@@ -69,7 +69,7 @@ docker run --name goals-backend \
  -e MONGODB_USERNAME=root \
  -e MONGODB_PASSWORD=secret \
  -v logs:/app/logs \
- -v /<folder-path>/backend:/app \
+ -v <folder-path>/backend:/app \
  -v /app/node_modules \
  --rm \
  -d \
@@ -88,7 +88,7 @@ docker build -t goals-react .
 ## Run React SPA Container
 
 docker run --name goals-frontend \
- -v /<folder-path>frontend/src:/app/src \
+ -v <folder-path>frontend/src:/app/src \
  --rm \
  -d \
  -p 3000:3000 \
